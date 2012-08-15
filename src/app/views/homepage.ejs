@@ -16,10 +16,10 @@
                 <tbody>
                     <% for(var i=0,l=goodsList.length;i<l;i++){ %>
                     <tr>
+                        <td><a data-goods-id="<%= goodsList[i]._id %>" href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].auction_id %>"><img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList[i].picture_url %>"/></a></td>
                         <td><%= goodsList[i].title %></td>
                         <td><%= goodsList[i].auction_id %></td>
                         <td><%= goodsList[i].price %></td>
-                        <td><%= goodsList[i].picture_url %></td>
                         <td><%= goodsList[i].cnt %></td>
                     </tr>
                     <% } %>
@@ -30,5 +30,6 @@
 
         </footer>
         <script src="/js/global/merge.js"></script>
+        <script src="/js/module/beacon.js"></script>
     </body>
 </html>
