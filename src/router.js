@@ -15,6 +15,10 @@
     	app.get('/', function(req, res){
             homepage.init(req, res);
         });
+        //婚庆
+        app.get('/wedding', function(req, res){
+            homepage.wedding(req, res);
+        });
         //分享会列表页面
     	app.get('/goods/list', function(req, res){
             goods.list(req, res);

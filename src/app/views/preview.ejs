@@ -1,36 +1,197 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="gbk"/>
-        <title>专场预览</title>
-        <meta name="description" content="女朋友礼物导购"/>
-        <meta name="keywords" content="女朋友礼物导购"/>
-        <link rel="stylesheet" href="/css/global/merge.css"/>
-        <base target="_blank">
-    </head>
-    <body>
-        <header>
-            
-        </header>
-        <div id="content">
-            <table>
-                <tbody>
-                    <% for(var i=0,l=goodsList.length;i<l;i++){ %>
-                    <tr>
-                        <td><a data-goods-id="<%= goodsList[i].auction_id %>" href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].auction_id %>"><img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList[i].picture_url %>"/></a></td>
-                        <td><%= goodsList[i].title %></td>
-                        <td><%= goodsList[i].auction_id %></td>
-                        <td><%= goodsList[i].price %></td>
-                        <td><%= goodsList[i].cnt %></td>
-                    </tr>
-                    <% } %>
-                </tbody>
-            </table>
-        </div>
-        <footer>
 
-        </footer>
-        <script src="/js/global/merge.js"></script>
-        <script src="/js/module/beacon.js"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="gbk">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="/css/global/merge.css"/>
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+.ui-step-4{
+    margin-bottom:20px;
+}
+.ui-step-4 ol, .ui-step-4 dl, .ui-step-4 li, .ui-step-4 dt, .ui-step-4 dd {
+    margin:0px;
+    padding:0px;
+    list-style:none;
+}
+.ui-step-4 em{
+    font-style:normal;
+}
+
+
+.goodslist {
+    min-height:400px;
+    padding:10px;
+    border-radius: 4px;
+    background:#eee;
+}
+.goodslist ul, .goodslist li {
+    margin:0px;
+    padding:0px;
+    list-style:none;
+}
+.goodslist ul {
+}
+.goodslist li {
+    height:90px;
+    margin-bottom:15px;
+}
+.goodslist li img{
+    float:left;
+    width:90px;
+    height:90px;
+    margin-right:10px;
+}
+    </style>
+        <link href="http://mui.tmall.net/src/step/step.css" rel="stylesheet">
+    <script src="http://a.tbcdn.cn/s/kissy/1.3.0rc/kissy.js"></script>
+  </head>
+
+  <body>
+<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">致命罗密欧</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <div class="container">
+        <!-- {{{ steps 4-1 -->
+        <div class="ui-step-4">
+            <ol class="ui-step-bar">
+                <li class="ui-step-start-done">
+                    <dl>
+                        <dt>
+                            <strong>
+                                <span class="ui-step-no">
+                                    1
+                                </span>
+                                <em class="ui-step-name">
+                                    筛选商品
+                                </em>
+                            </strong>
+                        </dt>
+                        <dd class="ui-step-status">
+                        </dd>
+                    </dl>
+                </li>
+                <li class="ui-step-cur">
+                    <dl>
+                        <dt>
+                            <span class="ui-step-no">
+                                2
+                            </span>
+                            <em class="ui-step-name">
+                                生成专题页
+                            </em>
+                        </dt>
+                        <dd class="ui-step-status">
+                        </dd>
+                    </dl>
+                </li>
+                <li class="">
+                    <dl>
+                        <dt>
+                            <span class="ui-step-no">
+                                3
+                            </span>
+                            <em class="ui-step-name">
+                                步骤3
+                            </em>
+                        </dt>
+                        <dd class="ui-step-status">
+                        </dd>
+                    </dl>
+                </li>
+                <li class="ui-step-end">
+                    <dl>
+                        <dt>
+                            <span class="ui-step-no">
+                                4
+                            </span>
+                            <em class="ui-step-name">
+                                步骤4
+                            </em>
+                        </dt>
+                        <dd class="ui-step-status">
+                        </dd>
+                    </dl>
+                </li>
+            </ol>
+        </div>
+        <!-- steps 4-1 }}} -->
+
+
+        
+<div class="alert alert-success">
+    <strong>访问链接；</strong> <em>http://localhost/special/<%= pageId %></em>  <span class="muted">将该链接发给你心仪的对方，我们的系统会帮你判断她喜欢哪一款礼物。</span>
+</div>
+        
+
+                    <ul id="J_Goods" class="thumbnails ks-tabs-panel">
+                        <% for(var i=0,l=goodsList.length;i<l;i++){ %>
+                        <li class="span3"  data-id="<%= goodsList[i].auction_id %>">
+                            <div class="thumbnail">
+                                <a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].auction_id %>">
+                                <img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList[i].picture_url %>" alt=""></a>
+                                <div class="caption">
+                                    <p class="title"><a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].auction_id %>"><%= goodsList[i].title %></a></p>
+                                </div>
+                            </div>
+                        </li>   
+                        <% } %>
+                    </ul>
+                    
+        
+        
+        
+
+    
+    </div> <!-- /container -->
+
+    
+
+
+    <script>
+        KISSY.config({
+            combine:false,
+            debug: true,
+            packages:[{
+                name: "remeos",
+                debug:true,
+                path: "src/",
+                tag: "20120815",
+                charset: "utf-8"
+            }]
+        });
+
+        KISSY.use("remeos/index", function(S,Init){
+            Init();
+        });
+    </script>
+
+    
+    
+
+  </body>
 </html>

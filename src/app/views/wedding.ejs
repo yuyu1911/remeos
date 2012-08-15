@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="gbk"/>
+        <title>专场预览</title>
+        <meta name="description" content="女朋友礼物导购"/>
+        <meta name="keywords" content="女朋友礼物导购"/>
+        <link rel="stylesheet" href="/css/global/merge.css"/>
+        <base target="_blank">
+    </head>
+    <body>
+        <header>
+            
+        </header>
+        <div id="content">
+            <table>
+                <tbody>
+                    <% for(var i=0,l=goodsList.baijian.length;i<l;i++){ %>
+                    <tr>
+                        <td><a data-goods-id="<%= goodsList.baijian[i].auction_id %>" href="http://detail.tmall.com/item.htm?id=<%= goodsList.baijian[i].auction_id %>"><img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList.baijian[i].picture_url %>_310x310.jpg"/></a></td>
+                        <td><%= goodsList.baijian[i].title %></td>
+                        <td><%= goodsList.baijian[i].auction_id %></td>
+                        <td><%= goodsList.baijian[i].price %></td>
+                        <td><%= goodsList.baijian[i].cnt %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <% for(var i=0,l=goodsList.chuangshang.length;i<l;i++){ %>
+                    <tr>
+                        <td><a data-goods-id="<%= goodsList.chuangshang[i].auction_id %>" href="http://detail.tmall.com/item.htm?id=<%= goodsList.chuangshang[i].auction_id %>"><img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList.chuangshang[i].picture_url %>_310x310.jpg"/></a></td>
+                        <td><%= goodsList.chuangshang[i].title %></td>
+                        <td><%= goodsList.chuangshang[i].auction_id %></td>
+                        <td><%= goodsList.chuangshang[i].price %></td>
+                        <td><%= goodsList.chuangshang[i].cnt %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <% for(var i=0,l=goodsList.maorong.length;i<l;i++){ %>
+                    <tr>
+                        <td><a data-goods-id="<%= goodsList.maorong[i].auction_id %>" href="http://detail.tmall.com/item.htm?id=<%= goodsList.maorong[i].auction_id %>"><img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList.maorong[i].picture_url %>_310x310.jpg"/></a></td>
+                        <td><%= goodsList.maorong[i].title %></td>
+                        <td><%= goodsList.maorong[i].auction_id %></td>
+                        <td><%= goodsList.maorong[i].price %></td>
+                        <td><%= goodsList.maorong[i].cnt %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        <footer>
+
+        </footer>
+        <script src="/js/global/merge.js"></script>
+        <script src="/js/module/beacon.js"></script>
+    </body>
+</html>

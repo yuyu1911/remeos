@@ -42,6 +42,20 @@
 			
 		});
 	};
+	exports.findWedding = function(callback){
+		var ret = {};
+		goods.find({category:'11'}).toArray(function(err,doc){
+			ret['baijian'] = doc;
+			goods.find({category:'12'}).toArray(function(err,doc){
+				ret['chuangshang'] = doc;
+				goods.find({category:'13'}).toArray(function(err,doc){
+					ret['maorong'] = doc;
+					callback(ret);
+				});
+			});
+			
+		});
+	};
 	exports.findByCategory = function(category,callback){
 		goods.find({category:category}).toArray(function(err,doc){
 			callback(doc);

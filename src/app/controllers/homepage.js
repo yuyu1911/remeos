@@ -10,4 +10,9 @@
 			res.render('homepage.ejs',{goodsList:items});
 		});
 	};
+	exports.wedding = function(req, res){
+		goods.findWedding(function(items){
+			res.render('wedding.ejs',{goodsList:items});
+		});
+	};
 })();
