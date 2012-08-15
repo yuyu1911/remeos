@@ -28,8 +28,13 @@
             beacon.init(req, res);
         });
         //生成专场并预览
-        app.get('/special/create', function(req, res){
+        app.post('/special/create', function(req, res){
+            console.info('create');
             special.create(req, res);
+        });
+        //专场页面
+        app.get('/special/preview/:pageId', function(req, res){
+            special.preview(req, res);
         });
         //专场页面
         app.get('/special/:pageId', function(req, res){

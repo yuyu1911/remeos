@@ -8,8 +8,38 @@
 	goods = db.collection('goods'),
 	ObjectID = require('mongoskin').ObjectID;
 	exports.findAll = function(callback){
-		goods.find().toArray(function(err,doc){
-			callback(doc);
+		var ret = {};
+		goods.find({category:'1'}).toArray(function(err,doc){
+			ret['dress'] = doc;
+			goods.find({category:'2'}).toArray(function(err,doc){
+				ret['tShirt'] = doc;
+				goods.find({category:'3'}).toArray(function(err,doc){
+					ret['bag'] = doc;
+					goods.find({category:'4'}).toArray(function(err,doc){
+						ret['staffToys'] = doc;
+						goods.find({category:'5'}).toArray(function(err,doc){
+							ret['sandal'] = doc;
+							goods.find({category:'6'}).toArray(function(err,doc){
+								ret['trousers'] = doc;
+								goods.find({category:'7'}).toArray(function(err,doc){
+									ret['necklace'] = doc;
+									goods.find({category:'8'}).toArray(function(err,doc){
+										ret['flower'] = doc;
+										goods.find({category:'9'}).toArray(function(err,doc){
+											ret['lowShoes'] = doc;
+											goods.find({category:'10'}).toArray(function(err,doc){
+												ret['bracelet'] = doc;
+												callback(ret);
+											});
+										});
+									});
+								});
+							});
+						});
+					});
+				});
+			});
+			
 		});
 	};
 	exports.findByCategory = function(category,callback){

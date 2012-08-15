@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="gbk"/>
+        <title>监控结果反馈</title>
+        <meta name="description" content="女朋友礼物导购"/>
+        <meta name="keywords" content="女朋友礼物导购"/>
+        <link rel="stylesheet" href="/css/global/merge.css"/>
+        <base target="_blank">
+    </head>
+    <body>
+        <header>
+            
+        </header>
+        <div id="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>序列号</th>
+                        <th>商品图片</th>
+                        <th>商品描述</th>
+                        <th>价格</th>
+                        <th>点击次数</th>
+                    </tr>
+                </thead>
+                <tbody id="goodsContainer">
+                    <% for(var i=0,l=goodsList.length;i<l;i++){ %>
+                    <tr>
+                        <td><%= i+1 %></td>
+                        <td><a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].goods.auction_id %>"><img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList[i].goods.picture_url %>_80x80.jpg"/></a></td>
+                        <td><a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].goods.auction_id %>"><%= goodsList[i].goods.title %></a></td>
+                        <td><%= goodsList[i].goods.price %></td>
+                        <td><%= goodsList[i].count %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        <footer>
+
+        </footer>
+        <script src="/js/global/merge.js"></script>
+        <script src="/js/module/beacon.js"></script>
+    </body>
+</html>

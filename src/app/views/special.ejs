@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="gbk"/>
+        <title>专场</title>
+        <meta name="description" content="女朋友礼物导购"/>
+        <meta name="keywords" content="女朋友礼物导购"/>
+        <link rel="stylesheet" href="/css/global/merge.css"/>
+        <base target="_blank">
+    </head>
+    <body>
+        <header>
+            
+        </header>
+        <div id="content">
+            <table>
+                <tbody>
+                    <% for(var i=0,l=goodsList.length;i<l;i++){ %>
+                    <tr>
+                        <td><a data-goods-id="<%= goodsList[i].auction_id %>" href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].auction_id %>"><img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList[i].picture_url %>"/></a></td>
+                        <td><%= goodsList[i].title %></td>
+                        <td><%= goodsList[i].auction_id %></td>
+                        <td><%= goodsList[i].price %></td>
+                        <td><%= goodsList[i].cnt %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        <footer>
+
+        </footer>
+        <script src="/js/global/merge.js"></script>
+        <script src="/js/module/beacon.js"></script>
+    </body>
+</html>

@@ -7,6 +7,8 @@
 	var beacon = require("../models/beacon.js");
 	//接收打点
 	exports.add = function(req, res){
+		res.writeHead(200, {'Content-Type': 'text/plain'});
+		res.end();
 		beacon.add(req.query);
 	};
 	exports.init = function(req, res){

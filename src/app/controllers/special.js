@@ -7,16 +7,25 @@
 	var special = require("../models/special.js");
 	//生成专场并预览
 	exports.create = function(req, res){
-		var goodsIds = req.query.goodsIds.split(',');
+		var goodsIds = req.body.goodsIds.split(',');
 		special.add(goodsIds,function(items,pageId){
-			res.render('preview.ejs',{goodsList:items,pageId:pageId});
+			res.redirect('/special/preview/'+pageId);
+		});
+	};
+	//专场预览
+	exports.preview = function(req, res){
+		var pageId = req.params.pageId;
+		special.findByPageId(pageId,function(items){
+			console.info(items.goods);
+			res.render('preview.ejs',{goodsList:items.goods,pageId:pageId});
 		});
 	};
 	//专场展现
 	exports.init = function(req, res){
+		
 		var pageId = req.params.pageId;
 		special.findByPageId(pageId,function(items){
-			res.render('special.ejs',{goodsList:items,pageId:pageId});
+			res.render('special.ejs',{goodsList:items.goods,pageId:pageId});
 		});
 	};
 })();
