@@ -12,7 +12,19 @@
             
         </header>
         <div id="content">
-            hello,world!
+            <table>
+                <tbody>
+                    <% for(var i=0,l=goodsList.length;i<l;i++){ %>
+                    <tr>
+                        <td><%= goodsList[i].title %></td>
+                        <td><%= goodsList[i].auction_id %></td>
+                        <td><%= goodsList[i].price %></td>
+                        <td><%= goodsList[i].picture_url %></td>
+                        <td><%= goodsList[i].cnt %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
         </div>
         <footer>
 

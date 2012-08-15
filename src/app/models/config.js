@@ -5,5 +5,5 @@
  */
 (function(){
 	var mongo = require('mongoskin');
-		exports.db = mongo.db('localhost:27017/remeo');
+		exports.db = mongo.db('10.13.182.222:27017/remeo');
 })();
