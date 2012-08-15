@@ -5,3 +5,67 @@
  */
 @import url("/css/base/bootstrap.min.css");
 @import url("/css/base/bootstrap-responsive.css");
+
+
+  body {
+	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  }
+
+
+.ui-step-4{
+	margin-bottom:20px;
+}
+.ui-step-4 ol, .ui-step-4 dl, .ui-step-4 li, .ui-step-4 dt, .ui-step-4 dd {
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+.ui-step-4 em{
+	font-style:normal;
+}
+
+
+
+.goodslist {
+	min-height:400px;
+	padding:10px;
+	border-radius: 4px;
+	background:#eee;
+}
+.goodslist ul, .goodslist li {
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+.goodslist ul {
+}
+.goodslist li {
+	height:90px;
+	margin-bottom:15px;
+}
+.goodslist li img{
+	float:left;
+	width:90px;
+	height:90px;
+	margin-right:10px;
+}
+
+
+
+
+
+
+
+.thumbnails .img {
+	width:190px;
+	height:190px;
+	overflow:hidden;
+}
+.thumbnails .title {
+	height:55px;
+	overflow:hidden;
+	line-height:150%;
+}
+.thumbnails .title a {
+	color:#000;
+}
