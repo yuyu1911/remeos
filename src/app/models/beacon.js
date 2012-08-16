@@ -45,7 +45,7 @@
 		});
 	};
 	exports.findResultByPageId = function(pageId,callback){
-		beacon.find({pageId : pageId,type:'click'}).toArray(function(err,items){
+		beacon.find({pageId : pageId,type:'click'}).sort({create_time:true}).toArray(function(err,items){
 			callback(items);
 		});
 	};
