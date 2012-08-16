@@ -41,9 +41,10 @@
 			res.send({isRealTime:isRealTime,x:mouseInfo.x,y:mouseInfo.y,goodsInfo:loseWeight(clickInfos)});
 		});
 	};
-	exports.catch = function(req, res){
+	exports.collect = function(req, res){
 		res.writeHead(200, {'Content-Type': 'text/plain'});
 		res.end();
-		beacon.catch(req.query);
+		console.info('collect');
+		beacon.collect(req.query);
 	};
 })();
