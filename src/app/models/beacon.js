@@ -19,9 +19,17 @@
 			})
 		});
 	};
+	exports.catch = function(o){
+		beacon.findOne({pageId:pageId,type:'mouse'},function(err,item){
+			if(item){
+				beacon.update({pageId:o.pageId,type:'mouse'}, {x:o.x,y:o.y,modify_time:new Date()});
+				return;
+			}
+			beacon.insert({pageId:o.pageId,type:'mouse',x:o.x,y:o.y,modify_time:new Date()});
+		});
+	};
 	exports.findByPageId = function(pageId,callback){
 		beacon.find({pageId : pageId}).toArray(function(err,items){
-			console.info(items);
 			callback(items);
 		});
 	};
