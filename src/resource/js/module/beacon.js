@@ -37,9 +37,9 @@
 		return ret.join('&');
 	};
 	$(document).ready(function(e){
-		var query = window.location.search.substring(1),
-		pageId = parseParam(query,'&')['pageId'];
-		$('#goodsContainer').delegate('[data-goods-id]','click',function(){
+		var goodsContainer = $('#goodsContainer'),
+		pageId = goodsContainer.attr('data-page-id');
+		goodsContainer.delegate('[data-goods-id]','click',function(){
 			var that = $(this),
 			goodsId = that.attr('data-goods-id');
 			recorder(parseJsonToParams({

@@ -24,6 +24,10 @@
             goods.list(req, res);
         });
         //打点接收
+        app.get('/beacon/track', function(req, res){
+            beacon.catch(req, res);
+        });
+        //鼠标轨迹接收
         app.get('/beacon/add', function(req, res){
             beacon.add(req, res);
         });

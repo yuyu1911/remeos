@@ -39,11 +39,7 @@
           </div><!--/.nav-collapse -->
         </div>
       </div>
-    </div>
-		
-		
-	
-							
+    </div>				
 	<div id="J_List" class="container gl">
 		<ul id="J_Goods" class="thumbnails ks-tabs-panel">
 			<% for(var i=0,l=goodsList.length;i<l;i++){ %>
@@ -58,11 +54,12 @@
 			</li>   
 			<% } %>
 		</ul>
+
     </div> <!-- /container -->
 
     
-
-
+    <script src="/js/global/merge.js"></script>
+    <script src="/js/module/beacon.js"></script>
     <script>
         KISSY.use("remeos/special", function(S,Init){
             Init({

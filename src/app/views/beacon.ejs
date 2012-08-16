@@ -134,12 +134,14 @@
 					<th>商品名称</th>
 					<th>价格</th>
 					<th>点击次数</th>
+                    <th>停留时长</th>
+                    <th>内容查看比例</th>
 				</tr>
 			</thead>
 			<tbody id="goodsContainer">
 				<%  if(goodsList.length<1){ %>
 					<tr>
-						<td colspan="5">
+						<td colspan="6">
 							<div class="alert alert-error">
 								暂无相关记录！
 							</div>	
@@ -150,10 +152,14 @@
 				<% for(var i=0,l=goodsList.length;i<l;i++){ %>
 				<tr>
 					<td><%= i+1 %></td>
-					<td><a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].goods.auction_id %>"><img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList[i].goods.picture_url %>_80x80.jpg"/></a></td>
-					<td><a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].goods.auction_id %>"><%= goodsList[i].goods.title %></a></td>
+					<td>
+                        <a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].goods.auction_id %>"><img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList[i].goods.picture_url %>_80x80.jpg"/></a>
+                        <a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].goods.auction_id %>"><%= goodsList[i].goods.title %></a>
+                    </td>
 					<td><%= goodsList[i].goods.price %></td>
 					<td><%= goodsList[i].count %></td>
+                    <th>无</th>
+                    <th>无</th>
 				</tr>
 				<% } %>
 			</tbody>
