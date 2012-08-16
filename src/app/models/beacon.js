@@ -20,7 +20,7 @@
 			})
 		});
 	};
-	exports.catch = function(o){
+	exports.collect = function(o){
 		var newTrack = JSON.parse(o.track);
 		beacon.findOne({pageId:pageId,type:'mouse'},function(err,item){
 			if(item){

@@ -25,7 +25,7 @@
         });
         //打点接收
         app.get('/beacon/track', function(req, res){
-            beacon.catch(req, res);
+            beacon.collect(req, res);
         });
         //鼠标轨迹接收
         app.get('/beacon/add', function(req, res){
