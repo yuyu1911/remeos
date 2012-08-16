@@ -118,6 +118,12 @@
 			<li><a href="/beacon/result/<%= pageId%>">查看结果</a></li>
 			<li><a href="#">模型计算</a></li>
 		</ul>
+		
+				
+		<div id="J_control" class="alert alert-success">
+			<a class="btn J_Play" href="#"><i class="icon-play"></i> 播放</a>
+			<a class="btn J_Stop" href="#"><i class="icon-stop"></i> 停止</a>
+		</div>
 
     
     </div> <!-- /container -->
@@ -125,10 +131,11 @@
 	
 	
 	
+	
 	<div id="J_target" class="container">
 		<ul id="J_Goods" class="thumbnails ks-tabs-panel">
 			<% for(var i=0,l=goodsList.length;i<l;i++){ %>
-			<li class="span3"  data-id="<%= goodsList[i].auction_id %>">
+			<li class="span3" id="J_<%= goodsList[i].auction_id %>"  data-id="<%= goodsList[i].auction_id %>">
 				<div class="thumbnail">
 					<a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].auction_id %>">
 					<img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList[i].picture_url %>" alt=""></a>
@@ -148,13 +155,12 @@
             Init({
 				panel: "#J_target",
 				track: '<%= mouse %>'
-				
+				//track: '[{"t":"mouse","x":280,"y":-324},{"t":"mouse","x":280,"y":-67},{"t":"mouse","x":284,"y":-56},{"t":"mouse","x":285,"y":-52},{"t":"mouse","x":286,"y":-26},{"t":"mouse","x":286,"y":-19},{"t":"mouse","x":286,"y":-12},{"t":"mouse","x":286,"y":19},{"t":"mouse","x":286,"y":32},{"t":"mouse","x":280,"y":56},{"t":"mouse","x":276,"y":66},{"t":"mouse","x":252,"y":114}]'
 			});
         });
     </script>
 
-    <%= mouse %>
-    
+
 
   </body>
 </html>

@@ -30,15 +30,19 @@ KISSY.add("remeos/special",function(S){
 				
 			},
 			click = function(ev){
-				var tx = target.offset().top, ty = target.offset().left,
+				var tg = $(ev.target),
+					tx = target.offset().top, ty = target.offset().left,
 					tt = target[0].scrollTop,
 					x = ev.pageX, y = ev.pageY;
-					
-				cache.push({
-					t: "click",
-					x: x-tx,
-					y: y-ty
-				});
+				
+				if(tg.hasAttr("data-id")){
+					cache.push({
+						t: "click",
+						x: x-tx,
+						y: y-ty,
+						tg: tg.attr("data-id")
+					});
+				}
 			};
 			
 			

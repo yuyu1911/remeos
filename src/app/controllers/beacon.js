@@ -33,6 +33,7 @@
 	exports.result = function(req, res){
 		var pageId = req.params.pageId;
 		beacon.findResultByPageId(pageId,function(items){
+		console.info(items);
 			res.render('beacon.ejs',{goodsList:items,pageId:pageId});
 		});
 	};
