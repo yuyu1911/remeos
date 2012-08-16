@@ -114,30 +114,7 @@
 
 
 	<div class="row-fluid">
-		<div class="span3">
-			
-			<div class="goodslist">
-			
-				<div class="alert alert-info">
-				请从右侧选择你感兴趣的商品
-				</div>
-			
-				<!--商品暂存-->
-				<ul id="J_Cache">
-				</ul>
-					
-
-				<form action="/special/create" method="post" id="J_form">
-					<input type="hidden" name="goodsIds" value="" id="J_ids" />
-					<div class="alert">
-						<p>请从右侧添加你感兴趣的商品，我们将使用你选择的商品生成个性专题页面。</p>
-						<p><button id="J_Submit" class="btn btn-large btn-inverse">生成专题页面</button></p>
-					</div>
-				</form>	
-				
-			</div>
 		
-		</div>
 		<div class="span9">
 		
 			<form class="well form-inline">
@@ -222,7 +199,30 @@
 			
 			
 		</div>
+		<div class="span3">
+			
+			<div class="goodslist">
+			
+				<div class="alert alert-info">
+				请从右侧选择你感兴趣的商品
+				</div>
+			
+				<!--商品暂存-->
+				<ul id="J_Cache">
+				</ul>
+					
+
+				<form action="/special/create" method="post" id="J_form">
+					<input type="hidden" name="goodsIds" value="" id="J_ids" />
+					<div class="alert">
+						<p>请从右侧添加你感兴趣的商品，我们将使用你选择的商品生成个性专题页面。</p>
+						<p><button id="J_Submit" class="btn btn-large btn-inverse">生成专题页面</button></p>
+					</div>
+				</form>	
+				
+			</div>
 		
+		</div>
 	</div>
 
 
