@@ -37,7 +37,7 @@
 		return ret.join('&');
 	};
 	$(document).ready(function(e){
-		var goodsContainer = $('#goodsContainer'),
+		var goodsContainer = $('#J_List'),
 		pageId = goodsContainer.attr('data-page-id');
 		goodsContainer.delegate('[data-goods-id]','click',function(){
 			var that = $(this),

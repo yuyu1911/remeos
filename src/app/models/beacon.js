@@ -10,7 +10,7 @@
 	special = db.collection('special'),
 	ObjectID = require('mongoskin').ObjectID;
 	exports.add = function(o){
-		beacon.findOne({pageId:o.pageId,goodsId:o.goodsId},function(err,item){
+		beacon.findOne({pageId:o.pageId,goodsId:o.goodsId,type:'click'},function(err,item){
 			if(item){
 				beacon.update({pageId:o.pageId,goodsId:o.goodsId}, { $inc: { count : 1 } } );
 				return;
@@ -22,7 +22,6 @@
 	};
 	exports.collect = function(o){
 		var newTrack = JSON.parse(o.track);
-		console.info(newTrack);
 		beacon.findOne({pageId:o.pageId,type:'mouse'},function(err,item){
 			if(item){
 				var oldTrack = item.track;

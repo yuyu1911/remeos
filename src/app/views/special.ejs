@@ -40,15 +40,15 @@
         </div>
       </div>
     </div>				
-	<div id="J_List" class="container gl">
+	<div id="J_List" class="container gl" data-page-id="<%= pageId %>">
 		<ul id="J_Goods" class="thumbnails ks-tabs-panel">
 			<% for(var i=0,l=goodsList.length;i<l;i++){ %>
 			<li class="span3"  data-id="<%= goodsList[i].auction_id %>">
 				<div class="thumbnail">
-					<a data-id="<%= goodsList[i].auction_id %>" target="_blank" href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].auction_id %>">
+					<a data-id="<%= goodsList[i].auction_id %>" data-goods-id="<%= goodsList[i]._id %>" target="_blank" href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].auction_id %>">
 					<img data-id="<%= goodsList[i].auction_id %>" src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList[i].picture_url %>" alt=""></a>
 					<div class="caption">
-						<p class="title"><a data-id="<%= goodsList[i].auction_id %>"  target="_blank" href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].auction_id %>"><%= goodsList[i].title %></a></p>
+						<p class="title"><a data-id="<%= goodsList[i].auction_id %>" data-goods-id="<%= goodsList[i]._id %>" target="_blank" href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].auction_id %>"><%= goodsList[i].title %></a></p>
 					</div>
 				</div>
 			</li>   
