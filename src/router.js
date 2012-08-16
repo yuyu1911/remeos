@@ -32,6 +32,10 @@
             beacon.add(req, res);
         });
         //打点结果展现
+        app.get('/beacon/result/:pageId', function(req, res){
+            beacon.result(req, res);
+        });
+		//鼠标轨迹展示
         app.get('/beacon/:pageId', function(req, res){
             beacon.init(req, res);
         });
