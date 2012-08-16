@@ -121,10 +121,10 @@
 
 .theme {
 	background:url("bg.png") no-repeat center 50px #EFECE3;
+	padding-top:350px;
 }
 .theme .gl{
 	padding:10px;
-	margin-top:350px;
 	background:#fff;
 }
 
