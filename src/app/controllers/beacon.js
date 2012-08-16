@@ -26,14 +26,15 @@
 		var pageId = req.params.pageId;
 		beacon.findByPageId(pageId,function(o){
 			var track = o.mouse||[];
-			res.render('track.ejs',{click:o.click,mouse:JSON.stringify(track),goodsList:o.special.goods,pageId:pageId});
+			console.info(JSON.stringify(track));
+			res.render('track.ejs',{click:o.click,mouse:JSON.stringify(track),goodsList:o.special.goods});
 		});
 	};
 	//结果页面
 	exports.result = function(req, res){
 		var pageId = req.params.pageId;
 		beacon.findResultByPageId(pageId,function(items){
-			res.render('beacon.ejs',{goodsList:items,pageId:pageId});
+			res.render('beacon.ejs',{beaconList:items});
 		});
 	};
 	exports.follow = function(req, res){
