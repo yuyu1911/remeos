@@ -41,9 +41,7 @@
 	//结果页面
 	exports.chart = function(req, res){
 		var pageId = req.params.pageId;
-		beacon.findResultByPageId(pageId,function(items){
-			res.render('beacon.ejs',{beaconList:items,pageId:pageId});
-		});
+		res.render('chart.ejs',{pageId:pageId});
 	};
 	exports.follow = function(req, res){
 		var pageId = req.query.pageId;
