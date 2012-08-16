@@ -35,6 +35,10 @@
         app.get('/beacon/result/:pageId', function(req, res){
             beacon.result(req, res);
         });
+        //导购模型推荐
+        app.get('/beacon/chart/:pageId', function(req, res){
+            beacon.chart(req, res);
+        });
 		//鼠标轨迹展示
         app.get('/beacon/:pageId', function(req, res){
             beacon.init(req, res);
