@@ -24,7 +24,7 @@
             goods.list(req, res);
         });
         //打点接收
-        app.get('/beacon/track', function(req, res){
+        app.post('/beacon/track', function(req, res){
             beacon.collect(req, res);
         });
         //鼠标轨迹接收

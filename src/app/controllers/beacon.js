@@ -25,7 +25,8 @@
 	exports.init = function(req, res){
 		var pageId = req.params.pageId;
 		beacon.findByPageId(pageId,function(o){
-			res.render('track.ejs',{click:o.click,mouse:JSON.stringify(o.mouse.track),specialList:o.special.goods});
+			var track = o.mouse||[];
+			res.render('track.ejs',{click:o.click,mouse:JSON.stringify(track),goodsList:o.special.goods});
 		});
 	};
 	//结果页面
@@ -44,7 +45,6 @@
 	exports.collect = function(req, res){
 		res.writeHead(200, {'Content-Type': 'text/plain'});
 		res.end();
-		console.info('collect');
-		beacon.collect(req.query);
+		beacon.collect(req.body);
 	};
 })();

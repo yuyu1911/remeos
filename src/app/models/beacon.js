@@ -22,10 +22,11 @@
 	};
 	exports.collect = function(o){
 		var newTrack = JSON.parse(o.track);
-		beacon.findOne({pageId:pageId,type:'mouse'},function(err,item){
+		console.info(newTrack);
+		beacon.findOne({pageId:o.pageId,type:'mouse'},function(err,item){
 			if(item){
 				var oldTrack = item.track;
-				beacon.update({pageId:o.pageId,type:'mouse'}, {$set:{track:old.concat(newTrack),modify_time:+new Date()}});
+				beacon.update({pageId:o.pageId,type:'mouse'}, {$set:{track:oldTrack.concat(newTrack),modify_time:+new Date()}});
 				return;
 			}
 			beacon.insert({pageId:o.pageId,type:'mouse',track:newTrack,modify_time:+new Date()});
@@ -39,7 +40,6 @@
 				ret['mouse'] = doc;
 				special.findOne({pageId:pageId},function(err,doc){
 					ret['special'] = doc;
-					console.info(doc);
 					callback(ret);
 				});
 			});

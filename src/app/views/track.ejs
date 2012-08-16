@@ -146,12 +146,14 @@
     <script>
         KISSY.use("remeos/track", function(S,Init){
             Init({
-				panel: "#J_target"
+				panel: "#J_target",
+				track: '<%= mouse %>'
+				
 			});
         });
     </script>
 
-    
+    <%= mouse %>
     
 
   </body>

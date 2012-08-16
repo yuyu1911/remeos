@@ -51,8 +51,8 @@ KISSY.add("remeos/special",function(S){
             S.io({
                 type: "POST",
                 data: {
-					id: config.id,
-					d: JSON.stringify(cache)
+					pageId: config.id,
+					track: JSON.stringify(cache)
 				},
                 url: config.url,
                 dataType:"json",
