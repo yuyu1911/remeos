@@ -101,7 +101,7 @@
 								4
 							</span>
 							<em class="ui-step-name">
-								查看结果 
+								查看结果
 							</em>
 						</dt>
 						<dd class="ui-step-status">
@@ -172,7 +172,7 @@
 					lowShoes: "单鞋",
 					bracelet: "手镯"
 				},
-				count = 0;
+				count = 0,
 				f = 0 ;
 			%>
 		
@@ -190,7 +190,7 @@
 				
 						<% for(var a in t){ %>
 							<% count=0 %>
-							<div class="ks-tabs-panel" <% if(f++!==0){ %>style="display:none"<% }%>>
+							<div class="ks-tabs-panel" <% if(f++!==0){ %>style="display:none"<% }%> >
 							<ul class="thumbnails">
 								<% goodsList[a].forEach(function(item){ %>
 									<li class="span3"  data-id="<%= item['_id'] %>">
@@ -201,6 +201,10 @@
 												<p class="buy"><span class="price">¥ <b><%= item.price %></b></span>  <a href="#" class="btn btn-info J_Add">加入专题页</a></p>
 											</div>
 										</div>
+										<div class="ext">
+											<span class="num"><%= item.cnt %> 人也喜欢</span>
+										</div>
+										
 									</li>
 									<% count++ %>
 									<% if(count%4 == 0){ %>

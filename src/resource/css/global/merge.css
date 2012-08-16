@@ -74,11 +74,32 @@
 }
 
 .thumbnails li.hover  .thumbnail{
-	background-color:#eee;
-	border:1px solid #aaa;
+	background-color:#eef6ff;
+	border:1px solid #cbe0ee;
 }
-.thumbnails .opt a{
+.thumbnails .buy a{
 	float:right;
+}
+
+.thumbnails li {
+	position:relative;
+}
+.thumbnails li  .ext {
+	position: absolute;
+	top: 165px;
+	left: 5px;
+	width: 190px;
+	height:30px;
+	color: #EB1176;
+	opacity: .8;
+	background-color: #eee;
+	display:none;
+}
+.thumbnails li  .num {
+	display:inline-block;
+	margin:6px 0 0 5px;
+	padding-left:20px;
+	background:url(heart.png) no-repeat left center;
 }
 
 
@@ -90,4 +111,15 @@
 .price b {
 	font: bold 12px/1.5 verdana,arial;
 	color: #F60;
+}
+
+
+
+.theme {
+	background:url("bg.png") no-repeat center 50px #EFECE3;
+}
+.theme .gl{
+	padding:10px;
+	margin-top:350px;
+	background:#fff;
 }
