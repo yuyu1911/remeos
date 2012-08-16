@@ -44,7 +44,7 @@
 		
 	
 							
-	<div class="container gl">
+	<div id="J_List" class="container gl">
 		<ul id="J_Goods" class="thumbnails ks-tabs-panel">
 			<% for(var i=0,l=goodsList.length;i<l;i++){ %>
 			<li class="span3"  data-id="<%= goodsList[i].auction_id %>">
@@ -64,9 +64,13 @@
 
 
     <script>
-        //KISSY.use("remeos/preview", function(S,Init){
-        //    Init();
-        //});
+        KISSY.use("remeos/special", function(S,Init){
+            Init({
+				target: "#J_List",
+				url:"#",
+				id: "id11"
+			});
+        });
     </script>
 
     

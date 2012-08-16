@@ -10,6 +10,10 @@
   body {
 	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
   }
+  
+ .container{
+	width:1170px;
+ }
 
 
 .ui-step-4{
@@ -123,3 +127,30 @@
 	margin-top:350px;
 	background:#fff;
 }
+
+
+
+
+
+
+
+
+
+
+
+.trackpanel{
+	position:relative;
+}
+.trackmouse {
+	position:absolute;
+	width:15px;
+	height:15px;
+	background:red;
+}
+
+
+
+
+
+
+

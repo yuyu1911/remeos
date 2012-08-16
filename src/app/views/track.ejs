@@ -113,69 +113,42 @@
 							
 
 						
-<ul class="nav nav-tabs">
-  <li><a href="#">估计跟踪</a></li>
-  <li  class="active"><a href="#">查看结果</a></li>
-  <li><a href="#">模型计算</a></li>
-</ul>
-						
-
-		
-		<table class="table table-bordered table-striped">
-			<colgroup align="center">
-				<col width="100"/>
-				<col width=""/>
-				<col width="120"/>
-				<col width="120"/>
-			</colgroup>
-			<thead>
-				<tr>
-					<th>点击顺序</th>
-					<th>商品名称</th>
-					<th>价格</th>
-					<th>点击次数</th>
-				</tr>
-			</thead>
-			<tbody id="goodsContainer">
-				<%  if(goodsList.length<1){ %>
-					<tr>
-						<td colspan="5">
-							<div class="alert alert-error">
-								暂无相关记录！
-							</div>	
-						</td>
-					</tr>
-				<% } %>
-				
-				<% for(var i=0,l=goodsList.length;i<l;i++){ %>
-				<tr>
-					<td><%= i+1 %></td>
-					<td><a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].goods.auction_id %>"><img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList[i].goods.picture_url %>_80x80.jpg"/></a></td>
-					<td><a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].goods.auction_id %>"><%= goodsList[i].goods.title %></a></td>
-					<td><%= goodsList[i].goods.price %></td>
-					<td><%= goodsList[i].count %></td>
-				</tr>
-				<% } %>
-			</tbody>
-		</table>
-		
-		
-		
-                    
-        
-        
-        
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#">轨迹跟踪</a></li>
+			<li><a href="#">查看结果</a></li>
+			<li><a href="#">模型计算</a></li>
+		</ul>
 
     
     </div> <!-- /container -->
-
+	
+	
+	
+	
+	<div id="J_target" class="container">
+		<ul id="J_Goods" class="thumbnails ks-tabs-panel">
+			<% for(var i=0,l=goodsList.length;i<l;i++){ %>
+			<li class="span3"  data-id="<%= goodsList[i].auction_id %>">
+				<div class="thumbnail">
+					<a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].auction_id %>">
+					<img src="http://img03.taobaocdn.com/bao/uploaded/<%= goodsList[i].picture_url %>" alt=""></a>
+					<div class="caption">
+						<p class="title"><a href="http://detail.tmall.com/item.htm?id=<%= goodsList[i].auction_id %>"><%= goodsList[i].title %></a></p>
+					</div>
+				</div>
+			</li>   
+			<% } %>
+		</ul>
+	</div>
     
 
 
     <script>
-        //KISSY.use("remeos/preview", function(S,Init){
-        //    Init();
-        //});
+        KISSY.use("remeos/track", function(S,Init){
+            Init({
+				panel: "#J_target"
+			});
+        });
     </script>
 
     
