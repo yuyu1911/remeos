@@ -30,7 +30,7 @@
 	min-height:400px;
 	padding:10px;
 	border-radius: 4px;
-	background:#eee;
+	background:#efefef;
 }
 .goodslist ul, .goodslist li {
 	margin:0px;
@@ -48,6 +48,9 @@
 	width:90px;
 	height:90px;
 	margin-right:10px;
+}
+.goodslist li .opt a{
+
 }
 
 
@@ -68,4 +71,23 @@
 }
 .thumbnails .title a {
 	color:#000;
+}
+
+.thumbnails li.hover  .thumbnail{
+	background-color:#eee;
+	border:1px solid #aaa;
+}
+.thumbnails .opt a{
+	float:right;
+}
+
+
+
+.price  {
+	font: 12px/1.5 arial,verdana;
+	color: #979FAC;
+}
+.price b {
+	font: bold 12px/1.5 verdana,arial;
+	color: #F60;
 }
