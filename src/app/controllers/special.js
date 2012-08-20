@@ -18,8 +18,12 @@
 		host = req.headers.host,
 		goods;
 		special.findByPageId(pageId,function(items){
-			console.info(items);
-			if(items.goods==='null' || items.goods==='null'){
+			console.info('----------------');
+			console.info(items.goods);
+			console.info(items.goods===null);
+			console.info(items.goods==='null');
+			console.info('+++++++++++++++++');
+			if(items.goods===null || items.goods==='null'){
 				goods = [];
 			}
 			else{
@@ -35,7 +39,7 @@
 		goods;
 
 		special.findByPageId(pageId,function(items){
-			if(items.goods==='null' || items.goods==='null'){
+			if(items.goods===null || items.goods==='null'){
 				goods = [];
 			}
 			else{
