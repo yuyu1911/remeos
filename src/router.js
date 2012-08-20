@@ -8,7 +8,8 @@
 	var homepage = require('./app/controllers/homepage.js'),
     beacon = require('./app/controllers/beacon.js'),
 	goods = require('./app/controllers/goods.js'),
-    special = require('./app/controllers/special.js');
+    special = require('./app/controllers/special.js'),
+    data = require('./app/controllers/data.js');
 
     module.exports = function(app){
     	//首页
@@ -55,6 +56,10 @@
         //专场页面
         app.get('/special/:pageId', function(req, res){
             special.init(req, res);
+        });
+        //专场页面
+        app.get('/data', function(req, res){
+            data.init(req, res);
         });
     };
 })();
