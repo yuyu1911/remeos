@@ -17,6 +17,7 @@
 		var pageId = req.params.pageId,
 		host = req.headers.host;
 		special.findByPageId(pageId,function(items){
+			console.info(items);
 			res.render('preview.ejs',{goodsList:items.goods,pageId:pageId,host:host});
 		});
 	};
