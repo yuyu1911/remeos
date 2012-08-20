@@ -88,7 +88,7 @@
 			
 		</ul> 
     </div>
-	
+	<% if(goodsList.length){ %>    
 	<div id="J_List" class="container gl" data-page-id="<%= pageId %>">
 		<ul id="J_Goods" class="thumbnails ks-tabs-panel">
 			<% for(var i=0,l=goodsList.length;i<l;i++){ %>
@@ -105,7 +105,7 @@
 		</ul>
 
     </div> <!-- /container -->
-
+    <% } %>
     
     <script src="/js/global/merge.js"></script>
     <script src="/js/module/beacon.js"></script>

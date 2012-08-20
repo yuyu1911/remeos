@@ -123,7 +123,7 @@
         <!-- steps 4-1 }}} -->
 
 
-							
+				<% if(goodsList.length){ %>			
 					<div class="alert alert-success">
 						<strong>访问链接；</strong> <em> <a target="_blank" href="/special/<%= pageId %>">http://<%= host %>/special/<%= pageId %></a></em>  <span class="muted">将该链接发给你心仪的对方，我们的系统会帮你判断她喜欢哪一款礼物。</span>  
 						<a class="btn" href="/beacon/<%= pageId %>"><i class="icon-refresh"></i> 查看结果</a>
@@ -142,8 +142,8 @@
                         </li>   
                         <% } %>
                     </ul>
-                    
-        
+                 <% } %>   
+            
         
         
 
