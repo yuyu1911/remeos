@@ -15,18 +15,33 @@
 	//专场预览
 	exports.preview = function(req, res){
 		var pageId = req.params.pageId,
-		host = req.headers.host;
+		host = req.headers.host,
+		goods;
 		special.findByPageId(pageId,function(items){
 			console.info(items);
-			res.render('preview.ejs',{goodsList:items.goods,pageId:pageId,host:host});
+			if(items.goods==='null' || items.goods==='null'){
+				goods = [];
+			}
+			else{
+				goods = items.goods;
+			}
+			res.render('preview.ejs',{goodsList:goods,pageId:pageId,host:host});
 		});
 	};
 	//专场展现
 	exports.init = function(req, res){
 		
-		var pageId = req.params.pageId;
+		var pageId = req.params.pageId,
+		goods;
+
 		special.findByPageId(pageId,function(items){
-			res.render('special.ejs',{goodsList:items.goods,pageId:pageId});
+			if(items.goods==='null' || items.goods==='null'){
+				goods = [];
+			}
+			else{
+				goods = items.goods;
+			}
+			res.render('special.ejs',{goodsList:goods,pageId:pageId});
 		});
 	};
 })();
