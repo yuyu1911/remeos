@@ -18,11 +18,6 @@
 		host = req.headers.host,
 		goods;
 		special.findByPageId(pageId,function(items){
-			console.info('----------------');
-			console.info(items.goods);
-			console.info(items.goods===null);
-			console.info(items.goods==='null');
-			console.info('+++++++++++++++++');
 			if(items.goods===null || items.goods==='null'){
 				goods = [];
 			}
@@ -39,6 +34,9 @@
 		goods;
 
 		special.findByPageId(pageId,function(items){
+			console.info('--------------------');
+			console.info(items);
+			console.info('++++++++++++++++++++++');
 			if(items.goods===null || items.goods==='null'){
 				goods = [];
 			}
