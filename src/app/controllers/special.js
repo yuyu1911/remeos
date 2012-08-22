@@ -34,9 +34,10 @@
 		goods;
 
 		special.findByPageId(pageId,function(items){
-			console.info('--------------------');
-			console.info(items);
-			console.info('++++++++++++++++++++++');
+			if(items === null || items === 'null'){
+				res.render('special.ejs',{goodsList:[],pageId:pageId});
+				return;
+			}
 			if(items.goods===null || items.goods==='null'){
 				goods = [];
 			}
