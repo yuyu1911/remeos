@@ -45,23 +45,23 @@
 	exports.findWedding = function(callback){
 		var ret = {};
 		goods.find({category:'21'}).toArray(function(err,doc){
-			ret['dress'] = doc;
+			ret['tongxie'] = doc;
 			goods.find({category:'22'}).toArray(function(err,doc){
-				ret['tShirt'] = doc;
+				ret['qunzhuang'] = doc;
 				goods.find({category:'23'}).toArray(function(err,doc){
-					ret['bag'] = doc;
+					ret['diaodaishan'] = doc;
 					goods.find({category:'24'}).toArray(function(err,doc){
-						ret['staffToys'] = doc;
+						ret['tongku'] = doc;
 						goods.find({category:'25'}).toArray(function(err,doc){
-							ret['sandal'] = doc;
+							ret['taozhuang'] = doc;
 							goods.find({category:'26'}).toArray(function(err,doc){
-								ret['trousers'] = doc;
+								ret['zhineng'] = doc;
 								goods.find({category:'27'}).toArray(function(err,doc){
-									ret['necklace'] = doc;
+									ret['peidui'] = doc;
 									goods.find({category:'28'}).toArray(function(err,doc){
-										ret['flower'] = doc;
+										ret['fatiao'] = doc;
 										goods.find({category:'29'}).toArray(function(err,doc){
-											ret['lowShoes'] = doc;
+											ret['bao'] = doc;
 											callback(ret);
 										});
 									});
