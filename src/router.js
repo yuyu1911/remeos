@@ -61,5 +61,13 @@
         app.get('/data', function(req, res){
             data.init(req, res);
         });
+        //跨域测试获取
+        app.get('/cross/domain/get', function(req, res){
+            res.render('crossDomainGet.ejs');
+        });
+        //跨域测试设置
+        app.get('/cross/domain/set', function(req, res){
+            res.render('crossDomainSet.ejs');
+        });
     };
 })();
