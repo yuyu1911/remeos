@@ -8,6 +8,32 @@
         <link rel="stylesheet" href="/css/global/merge.css"/>
         <link href="http://mui.tmall.net/src/step/step.css" rel="stylesheet">
         <script src="http://a.tbcdn.cn/s/kissy/1.3.0rc/kissy.js"></script>
+        <script>
+            KISSY.config({
+                combine:false,
+                debug: true,
+                packages:[{
+                    name: "remeos",
+                    debug:true,
+                    path: "/js/",
+                    tag: "20120815",
+                    charset: "utf-8"
+                }]
+            });
+        </script>
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34200985-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
     </head>
     
     <body>
@@ -22,13 +48,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">致命罗密欧</a>
+          <a class="brand" href="/">致命罗密欧</a>
           <div class="nav-collapse">
-
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
+    
+    
 
     <div class="container">
             
@@ -44,7 +71,7 @@
                                     1
                                 </span>
                                 <em class="ui-step-name">
-                                    筛选商品
+                                    挑选商品
                                 </em>
                             </strong>
                         </dt>
@@ -73,7 +100,7 @@
                                 3
                             </span>
                             <em class="ui-step-name">
-                                步骤3
+                                让她挑选
                             </em>
                         </dt>
                         <dd class="ui-step-status">
@@ -87,7 +114,7 @@
                                 4
                             </span>
                             <em class="ui-step-name">
-                                步骤4
+                                查看结果
                             </em>
                         </dt>
                         <dd class="ui-step-status">
@@ -100,32 +127,9 @@
 
 
     <div class="row-fluid">
-        <div class="span3">
-            
-            <div class="goodslist">
-            
-                <div class="alert alert-info">
-                请从右侧选择你感兴趣的商品
-                </div>
-            
-                <!--商品暂存-->
-                <ul id="J_Cache">
-                </ul>
-                    
-
-                <form action="/special/create" method="post" id="J_form">
-                    <input type="hidden" name="goodsIds" value="" id="J_ids" />
-                    <div class="alert">
-                        <p>请从右侧添加你感兴趣的商品，我们将使用你选择的商品生成个性专题页面。</p>
-                        <p><button id="J_Submit" class="btn btn-large btn-inverse">生成专题页面</button></p>
-                    </div>
-                </form> 
-                
-            </div>
         
-        </div>
         <div class="span9">
-        
+        <!-- 
             <form class="well form-inline">
                 <select id="select01">
                     <option>请选择年龄层次</option>
@@ -140,15 +144,12 @@
                     <option>请选择所在地区</option>
                     <option>江浙沪</option>
                 </select>
-                <select id="select01">
-                    <option>请选择类别</option>
-                    <option>江浙沪</option>
-                </select>
+                <input type="text" class="input-small" placeholder="关键字">
                 <button type="submit" class="btn">筛 选</button>
             </form>
-        
+        -->
 
-            <%
+           <%
                 var t = {
                     tongxie:"童鞋",
                     qunzhuang:"女童裙装",
@@ -178,7 +179,7 @@
                 
                         <% for(var a in t){ %>
                             <% count=0 %>
-                            <div class="ks-tabs-panel" <% if(f++!==0){ %>style="display:none"<% }%>>
+                            <div class="ks-tabs-panel" <% if(f++!==0){ %>style="display:none"<% }%> >
                             <ul class="thumbnails">
                                 <% goodsList[a].forEach(function(item){ %>
                                     <li class="span3"  data-id="<%= item['_id'] %>">
@@ -186,9 +187,13 @@
                                             <div class="img"><a target="_blank" href="http://detail.tmall.com/item.htm?id=<%= item.auction_id %>"><img width="220" src="http://img03.taobaocdn.com/bao/uploaded/<%= item['picture_url'] %>_210x210.jpg" alt=""></a></div>
                                             <div class="caption">
                                                 <p class="title"><a target="_blank" href="http://detail.tmall.com/item.htm?id=<%= item.auction_id %>"><%= item['title'] %></a></p>
-                                                <p><a href="#" class="btn btn-info J_Add">加入专题页</a></p>
+                                                <p class="buy"><span class="price">¥ <b><%= item.price %></b></span>  <a href="#" class="btn btn-info J_Add">加入专题页</a></p>
                                             </div>
                                         </div>
+                                        <div class="ext">
+                                            <span class="num"><%= item.cnt %> 人也喜欢</span>
+                                        </div>
+                                        
                                     </li>
                                     <% count++ %>
                                     <% if(count%4 == 0){ %>
@@ -206,8 +211,31 @@
             
             
         </div>
-    </div>
+        <div class="span3">
+            
+            <div class="goodslist">
+            
+                <div class="alert alert-info">
+                请从左侧选择你感兴趣的商品
+                </div>
+            
+                <!--商品暂存-->
+                <ul id="J_Cache">
+                </ul>
+                    
 
+                <form action="/special/create" method="post" id="J_form">
+                    <input type="hidden" name="goodsIds" value="" id="J_ids" />
+                    <div class="alert">
+                        <p>请从左侧添加你感兴趣的商品，我们将使用你选择的商品生成个性专题页面。</p>
+                        <p><button id="J_Submit" class="btn btn-large btn-inverse">生成专题页面</button></p>
+                    </div>
+                </form> 
+                
+            </div>
+        
+        </div>
+    </div>
 
 
     
@@ -217,24 +245,11 @@
 
 
     <script>
-        KISSY.config({
-            combine:false,
-            debug: true,
-            packages:[{
-                name: "remeos",
-                debug:true,
-                path: "/js/",
-                tag: "20120815",
-                charset: "utf-8"
-            }]
-        });
-
         KISSY.use("remeos/index", function(S,Init){
             Init();
         });
     </script>
 
-    
     
 
     </body>
