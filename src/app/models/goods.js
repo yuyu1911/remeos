@@ -44,13 +44,31 @@
 	};
 	exports.findWedding = function(callback){
 		var ret = {};
-		goods.find({category:'11'}).toArray(function(err,doc){
-			ret['baijian'] = doc;
-			goods.find({category:'12'}).toArray(function(err,doc){
-				ret['chuangshang'] = doc;
-				goods.find({category:'13'}).toArray(function(err,doc){
-					ret['maorong'] = doc;
-					callback(ret);
+		goods.find({category:'21'}).toArray(function(err,doc){
+			ret['dress'] = doc;
+			goods.find({category:'22'}).toArray(function(err,doc){
+				ret['tShirt'] = doc;
+				goods.find({category:'23'}).toArray(function(err,doc){
+					ret['bag'] = doc;
+					goods.find({category:'24'}).toArray(function(err,doc){
+						ret['staffToys'] = doc;
+						goods.find({category:'25'}).toArray(function(err,doc){
+							ret['sandal'] = doc;
+							goods.find({category:'26'}).toArray(function(err,doc){
+								ret['trousers'] = doc;
+								goods.find({category:'27'}).toArray(function(err,doc){
+									ret['necklace'] = doc;
+									goods.find({category:'28'}).toArray(function(err,doc){
+										ret['flower'] = doc;
+										goods.find({category:'29'}).toArray(function(err,doc){
+											ret['lowShoes'] = doc;
+											callback(ret);
+										});
+									});
+								});
+							});
+						});
+					});
 				});
 			});
 			
