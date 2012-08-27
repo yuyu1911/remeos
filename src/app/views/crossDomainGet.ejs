@@ -9,9 +9,26 @@
     </head>
 	
     <body>
-	获取
+	<ul id='container'>
+
+	</ul>
 		<script>
-			(function (){var t = document.createElement("script");t.src = "http://oldj.net/tools/setv?r=" + Math.random();document.body.appendChild(t);})();
+		var fragment = document.createDocumentFragment();
+		function test(o){
+			var li = document.createElement('li');
+			for(var i in o){
+				console.info(i+':'+o[i]);
+				newLi = li.cloneNode(false);
+				newLi.innerHTML = i+':'+o[i];
+				fragment.appendChild(newLi);
+			}
+			container.appendChild(fragment);
+		}
+			(function (){
+				var t = document.createElement("script");
+				t.src = "http://oldj.net/tools/getv?r=" + Math.random()+'&callback=test';
+				document.body.appendChild(t);
+			})();
 		</script>
     </body>
 </html>

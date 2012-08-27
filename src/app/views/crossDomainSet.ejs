@@ -11,7 +11,13 @@
     <body>
 	设置
     <script>
-            (function (){var t = document.createElement("script");t.src = "http://oldj.net/tools/setv?r=" + Math.random();document.body.appendChild(t);})();
+            (function (){
+                var t = document.createElement("script"),
+                r = Math.random();
+                t.src = "http://oldj.net/tools/setv?r=" + r;
+                document.body.appendChild(t);
+                document.write(r);
+            })();
         </script>
     </body>
 </html>
