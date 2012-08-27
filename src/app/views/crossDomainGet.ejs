@@ -13,21 +13,26 @@
 
 	</ul>
 		<script>
-		var fragment = document.createDocumentFragment();
+		var fragment;
 		function test(o){
 			var li = document.createElement('li');
 			for(var i in o){
 				newLi = li.cloneNode(false);
 				newLi.innerHTML = i+':'+o[i];
 				fragment.appendChild(newLi);
+				alert(i+':'+o[i]);
 			}
 			document.getElementById('container').appendChild(fragment);
+			alert('end');
 		}
-			(function (){
+		window.onload = function (){
+			alert('start');
+				fragment = document.createDocumentFragment();
 				var t = document.createElement("script");
 				t.src = "http://oldj.net/tools/getv?r=" + Math.random()+'&callback=test';
 				document.body.appendChild(t);
-			})();
+				alert('loaded');
+			};
 		</script>
     </body>
 </html>
