@@ -17,7 +17,6 @@
 		function test(o){
 			var li = document.createElement('li');
 			for(var i in o){
-				console.info(i+':'+o[i]);
 				newLi = li.cloneNode(false);
 				newLi.innerHTML = i+':'+o[i];
 				fragment.appendChild(newLi);

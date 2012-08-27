@@ -11,10 +11,15 @@
     <body>
 	设置
     <script>
+    function cb(o){
+        if(o.suceess){
+            alert('设置成功');
+        }
+    }
             (function (){
                 var t = document.createElement("script"),
                 r = Math.random();
-                t.src = "http://oldj.net/tools/setv?r=" + r;
+                t.src = "http://oldj.net/tools/setv?r=" + r+'&callback=cb';
                 document.body.appendChild(t);
                 document.write(r);
             })();
